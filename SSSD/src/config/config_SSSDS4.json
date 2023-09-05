@@ -1,0 +1,44 @@
+{   
+    "diffusion_config":{
+        "T": 200,
+        "beta_0": 0.001,
+        "beta_T": 0.02
+    },
+    "wavenet_config": {
+        "in_channels": 37, 
+        "out_channels": 37,
+        "num_res_layers": 36,
+        "res_channels": 256, 
+        "skip_channels": 256,
+        "diffusion_step_embed_dim_in": 128,
+        "diffusion_step_embed_dim_mid": 512,
+        "diffusion_step_embed_dim_out": 512,
+        "s4_lmax": 100,
+        "s4_d_state":64,
+        "s4_dropout":0.0,
+        "s4_bidirectional":1,
+        "s4_layernorm":1
+    },
+    "train_config": {
+        "output_directory": "/content/drive/MyDrive/ColabNotebooks/TFM/generated_data_saits/results",
+        "ckpt_iter": "max",
+        "iters_per_ckpt": 100,
+        "iters_per_logging": 100,
+        "n_iters": 500,
+        "learning_rate": 2e-2,
+        "only_generate_missing": 1,
+        "use_model": 2,
+        "masking": "rm",
+        "missing_k": 60
+    },
+    "trainset_config":{
+        "train_data_path": "/content/drive/MyDrive/ColabNotebooks/TFM/generated_data_saits/mcar30/train.npy",
+        "test_data_path": "/content/drive/MyDrive/ColabNotebooks/TFM/generated_data_saits/mcar30/test_x_hat.npy",
+        "segment_length":100,
+        "sampling_rate": 100
+    },
+    "gen_config":{
+        "output_directory": "content/",
+        "ckpt_path": "content/"
+    }
+}
